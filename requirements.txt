@@ -1,0 +1,153 @@
+# NASA EarthRISE Developers Academy
+# requirements.txt — standard geospatial & data science stack
+# Generated for all project-level repos — 2026
+
+# ── Core data science ──────────────────────────────────────────────────────
+numpy
+pandas
+scipy
+statsmodels
+sympy
+scikit-learn
+xarray
+dask
+zarr
+
+# ── Deep learning & ML ─────────────────────────────────────────────────────
+tensorflow
+keras
+torch
+torchvision
+torchaudio
+transformers
+lightgbm
+xgboost
+catboost
+
+# ── Geospatial — vector ────────────────────────────────────────────────────
+geopandas
+shapely
+fiona
+pyproj
+rtree
+geopy
+h3
+s2geometry
+libpysal
+esda
+splot
+
+# ── Geospatial — raster ────────────────────────────────────────────────────
+gdal
+rasterio
+rioxarray
+pyresample
+affine
+mercantile
+cogeo-mosaic
+rio-cogeo
+
+# ── Geospatial — remote sensing ────────────────────────────────────────────
+sentinelsat
+pystac
+pystac-client
+stackstac
+odc-stac
+eo-learn
+earthengine-api
+geemap
+wxee
+planetary-computer
+
+# ── Geospatial — analysis ──────────────────────────────────────────────────
+rasterstats
+exactextract
+Verde
+pysal
+momepy
+osmnx
+networkx
+whitebox
+richdem
+pysheds
+
+# ── Visualization ─────────────────────────────────────────────────────────
+matplotlib
+seaborn
+plotly
+bokeh
+altair
+folium
+ipyleaflet
+keplergl
+pydeck
+cartopy
+contextily
+mapclassify
+lonboard
+
+# ── Notebook & interactive ────────────────────────────────────────────────
+jupyter
+jupyterlab
+ipywidgets
+ipykernel
+nbformat
+nbconvert
+voila
+panel
+holoviews
+hvplot
+datashader
+param
+
+# ── Cloud & data access ───────────────────────────────────────────────────
+boto3
+google-cloud-storage
+google-cloud-bigquery
+azure-storage-blob
+fsspec
+s3fs
+gcsfs
+intake
+intake-stac
+intake-geopandas
+
+# ── NASA / earth data specific ────────────────────────────────────────────
+netCDF4
+h5py
+h5netcdf
+cfgrib
+eccodes
+pygrib
+satpy
+pyspectral
+trollimage
+pyhdf
+cmr-python-accelerator
+
+# ── Data formats & I/O ────────────────────────────────────────────────────
+pyarrow
+fastparquet
+openpyxl
+xlrd
+xlwt
+tables
+lxml
+beautifulsoup4
+requests
+httpx
+aiohttp
+
+# ── Utilities ─────────────────────────────────────────────────────────────
+tqdm
+click
+pydantic
+python-dotenv
+loguru
+rich
+typer
+joblib
+multiprocess
+numba
+cython
+pyogrio
