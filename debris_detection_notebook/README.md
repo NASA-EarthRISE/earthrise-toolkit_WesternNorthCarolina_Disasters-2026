@@ -2,14 +2,14 @@
 
 Map likely post-storm forest debris concentrations using NASA HLS optical imagery, OPERA RTC-S1 radar imagery, NLCD forest cover, robust multi-year change metrics, and optional Local Moran's I clustering.
 
-The notebook is interactive. Nearly every analysis setting is entered through checked prompts, and the imagery-access method is selected later when the workflow reaches the streaming/downloading stage.
+The notebook is interactive. Nearly every analysis setting is entered through checked prompts to the user, and the imagery-access method is selected later when the workflow reaches the streaming/downloading stage.
 
 ## Documentation
 
 | File | Description |
 |------|-------------|
 | `debris_detection_minimal.ipynb` | Main interactive notebook. Run the cells from top to bottom. |
-| `README_debris_detection.md` | System requirements, inputs, configuration reference, instructions, workflow, and outputs. |
+| `README.md` | System requirements, inputs, configuration reference, instructions, workflow, and outputs. |
 | `environment.yml` | Optional Conda environment definition when included with the larger repository. |
 
 ---
@@ -27,7 +27,7 @@ The notebook is interactive. Nearly every analysis setting is entered through ch
 | 7 | Process imagery | Align bands, apply quality masks, calculate optical and radar indices, and cache each scene. |
 | 8 | Build composites | Align NLCD, keep forest classes, and create annual median composites. |
 | 9 | Calculate change | Build the multi-year median/MAD baseline and calculate difference, percentage change, and robust anomaly layers. |
-| 10 | Create scores | Create spectral, radar, and combined 0-1 debris-likelihood scores, tables, and figures. |
+| 10 | Create scores | Create spectral, radar, and combined 0-1 disturbance scores, tables, and figures. |
 | 11 | Local Moran's I | Optionally aggregate the score and identify significant HH, LH, LL, and HL clusters. |
 | 12 | Display and export | Display the latest maps and save configuration, system, software, and output inventories. |
 
@@ -163,7 +163,7 @@ Every setting below is entered through notebook prompts. Press **Enter** to acce
 | Setting | Default | Description |
 |---------|---------|-------------|
 | `analysis_chunk_pixels` | `1536` | Block size for windowed change calculations. |
-| `composite_block_pixels` | `384` | Block size for annual composites and debris scores. |
+| `composite_block_pixels` | `384` | Block size for annual composites and disturbance scores. |
 | `preview_max_dimension_pixels` | `1000` | Maximum width or height of notebook previews. |
 | `distribution_sample_size` | `20000` | Maximum sampled pixels per distribution plot. |
 | `distribution_seed` | `0` | Random seed used for repeatable plot sampling. |
@@ -235,11 +235,11 @@ The workflow:
 9. Creates annual median composites and valid-observation counts.
 10. Builds a multi-year median baseline and robust MAD-based spread.
 11. Calculates target-year difference, percentage change where appropriate, and robust anomaly.
-12. Produces spectral, radar, and combined 0-1 debris-likelihood scores.
+12. Produces spectral, radar, and combined 0-1 disturbance scores.
 13. Optionally calculates Local Moran's I clusters at a user-selected support resolution.
 14. Exports maps, rasters, figures, tables, configuration, system information, and an output inventory.
 
-The 0-1 debris-likelihood score is a relative change score. It is not a probability and does not confirm debris without additional interpretation or validation.
+The 0-1 disturbance score is a relative change score. It is not a probability and does not confirm debris without additional interpretation or validation.
 
 ---
 
@@ -290,9 +290,9 @@ debris_output/
 | `composites/*_count.tif` | Valid-observation count for each annual composite. |
 | `baselines/*` | Baseline median, MAD, and robust-spread rasters. |
 | `change/*` | Difference, percentage-change, and robust-anomaly rasters. |
-| `candidates/spectral_score_<year>.tif` | Optical debris-likelihood score from 0 to 1. |
-| `candidates/radar_score_<year>.tif` | Radar debris-likelihood score from 0 to 1. |
-| `candidates/combined_score_<year>.tif` | Equal-sensor combined debris-likelihood score from 0 to 1. |
+| `candidates/spectral_score_<year>.tif` | Optical disturbance score from 0 to 1. |
+| `candidates/radar_score_<year>.tif` | Radar disturbance score from 0 to 1. |
+| `candidates/combined_score_<year>.tif` | Equal-sensor combined disturbance score from 0 to 1. |
 | `lisa/lisa_cluster_<variable>_<year>.tif` | Significant Local Moran cluster classes. |
 | `tables/lisa_cluster_counts_*.csv` | Unit counts and area for each cluster class. |
 | `figures/*.png` | Temporal plots, distributions, and map overlays. |
