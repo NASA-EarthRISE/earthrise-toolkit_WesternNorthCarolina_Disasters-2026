@@ -10,7 +10,7 @@ The notebook is interactive. Nearly every analysis setting is entered through ch
 |------|-------------|
 | `debris_detection_minimal.ipynb` | Main interactive notebook. Run the cells from top to bottom. |
 | `README.md` | System requirements, inputs, configuration reference, instructions, workflow, and outputs. |
-| `environment.yml` | Optional Conda environment definition when included with the larger repository. |
+
 
 ---
 
